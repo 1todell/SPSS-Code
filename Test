@@ -1,1 +1,10 @@
-
+**FILTERS**.
+*Filter for those of working age in England who want to work (not looking or waiting to start).
+FILTER OFF.
+USE ALL.
+COMPUTE filter_$1=(range(age, 16, 64)) & (region=1) & (parent=1).
+VARIABLE LABELS filter_$1 'Parents aged 16-64 in England'.
+VALUE LABELS filter_$1 0 'Not Selected' 1 'Selected'.
+FORMATS filter_$1 (f1.0).
+Filter BY filter_$1.
+EXECUTE.
